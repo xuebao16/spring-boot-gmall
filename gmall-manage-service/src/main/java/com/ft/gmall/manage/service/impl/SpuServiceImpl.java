@@ -1,9 +1,6 @@
 package com.ft.gmall.manage.service.impl;
 
-import com.ft.gmall.manage.mapper.PmsProductImagesMapper;
-import com.ft.gmall.manage.mapper.PmsProductInfoMapper;
-import com.ft.gmall.manage.mapper.PmsProductSaleAttrMapper;
-import com.ft.gmall.manage.mapper.PmsProductSaleAttrValueMapper;
+import com.ft.gmall.manage.mapper.*;
 import com.ft.gmall.user.bean.*;
 import com.ft.gmall.user.service.SpuService;
 import org.apache.dubbo.config.annotation.Service;
@@ -64,6 +61,12 @@ public class SpuServiceImpl implements SpuService {
     public void saveSpuInfo(PmsProductInfo pmsProductInfo) {
         pmsProductInfoMapper.insert(pmsProductInfo);
         String spuId = pmsProductInfo.getId();
+
+        List<PmsProductImage> spuImageList = pmsProductInfo.getSpuImageList();
+        for (PmsProductImage image : spuImageList) {
+            image.setSpuId(spuId);
+            pmsProductImagesMapper.insertSelective(image);
+        }
 
         List<PmsProductSaleAttr> spuSaleAttrList = pmsProductInfo.getSpuSaleAttrList();
         for (PmsProductSaleAttr saleAttr : spuSaleAttrList) {

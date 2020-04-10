@@ -1,14 +1,13 @@
 package com.ft.gmall.manage.controller;
 
+import com.ft.gmall.manage.util.PmsUploadUtil;
 import com.ft.gmall.user.bean.PmsProductImage;
 import com.ft.gmall.user.bean.PmsProductInfo;
 import com.ft.gmall.user.bean.PmsProductSaleAttr;
 import com.ft.gmall.user.service.SpuService;
 import org.apache.dubbo.config.annotation.Reference;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -40,5 +39,11 @@ public class SpuController {
     List<PmsProductImage> getSpuSaleImageListBySpuId(Integer spuId){
         List<PmsProductImage> pmsProductImagesList = spuService.getSpuSaleImageListBySpuId(spuId);
         return pmsProductImagesList;
+    }
+
+    @RequestMapping("/fileUpload")
+    public String fileUpload(@RequestParam("file") MultipartFile multipartFile){
+        String imgUrl = PmsUploadUtil.uploadImage(multipartFile);
+        return imgUrl;
     }
 }

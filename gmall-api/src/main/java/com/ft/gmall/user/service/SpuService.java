@@ -3,6 +3,7 @@ package com.ft.gmall.user.service;
 import com.ft.gmall.user.bean.PmsProductImage;
 import com.ft.gmall.user.bean.PmsProductInfo;
 import com.ft.gmall.user.bean.PmsProductSaleAttr;
+import com.ft.gmall.user.bean.PmsSkuImage;
 
 import java.util.List;
 
