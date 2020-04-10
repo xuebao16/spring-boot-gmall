@@ -14,7 +14,7 @@ public class PmsProductImage implements Serializable {
     @Id
     private String id;
     @Column
-    private String productId;
+    private String spuId;
     @Column
     private String imgName;
     @Column
@@ -31,12 +31,12 @@ public class PmsProductImage implements Serializable {
         this.id = id;
     }
 
-    public String getProductId() {
-        return productId;
+    public String getSpuId() {
+        return spuId;
     }
 
-    public void setProductId(String productId) {
-        this.productId = productId;
+    public void setSpuId(String spuId) {
+        this.spuId = spuId;
     }
 
     public String getImgName() {

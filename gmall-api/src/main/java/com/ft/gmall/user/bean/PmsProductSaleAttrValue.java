@@ -11,7 +11,7 @@ public class PmsProductSaleAttrValue implements Serializable {
     String id ;
 
     @Column
-    String productId;
+    String spuId;
 
     @Column
     String saleAttrId;
@@ -30,12 +30,12 @@ public class PmsProductSaleAttrValue implements Serializable {
         this.id = id;
     }
 
-    public String getProductId() {
-        return productId;
+    public String getSpuId() {
+        return spuId;
     }
 
-    public void setProductId(String productId) {
-        this.productId = productId;
+    public void setSpuId(String spuId) {
+        this.spuId = spuId;
     }
 
     public String getSaleAttrId() {

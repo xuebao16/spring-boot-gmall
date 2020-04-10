@@ -8,5 +8,9 @@ dubbo:
   scan:
     base-packages: com.ft.gmall.manage.controller
   version: 1.0.0
+  consumer:
+    timeout: 600000
+    check: false
+
 server:
   port: 8071
