@@ -1,4 +1,4 @@
-package com.ft.gmall.manage;
+package com.ft.gmall;
 
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;
