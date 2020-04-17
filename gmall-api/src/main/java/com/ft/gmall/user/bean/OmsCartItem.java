@@ -12,7 +12,7 @@ public class OmsCartItem implements Serializable{
     private String productId;
     private String productSkuId;
     private String memberId;
-    private int quantity;
+    private BigDecimal quantity;
     private BigDecimal price;
     private String sp1;
     private String sp2;
@@ -29,7 +29,7 @@ public class OmsCartItem implements Serializable{
     private String productBrand;
     private String productSn;
     private String productAttr;
-
+    private String isChecked;
     public String getId() {
         return id;
     }
@@ -62,11 +62,11 @@ public class OmsCartItem implements Serializable{
         this.memberId = memberId;
     }
 
-    public int getQuantity() {
+    public BigDecimal getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(BigDecimal quantity) {
         this.quantity = quantity;
     }
 
@@ -196,5 +196,13 @@ public class OmsCartItem implements Serializable{
 
     public void setProductAttr(String productAttr) {
         this.productAttr = productAttr;
+    }
+
+    public String getIsChecked() {
+        return isChecked;
+    }
+
+    public void setIsChecked(String isChecked) {
+        this.isChecked = isChecked;
     }
 }
