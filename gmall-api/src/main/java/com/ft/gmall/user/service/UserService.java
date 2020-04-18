@@ -14,4 +14,10 @@ public interface UserService {
     int updateUser(UmsMember umsMember);
 
     int delectUserById(Integer userId);
+
+    UmsMember getUserByName(String loginName);
+
+    UmsMember login(UmsMember userInfo);
+
+    void addUserToken(String token, String userId);
 }

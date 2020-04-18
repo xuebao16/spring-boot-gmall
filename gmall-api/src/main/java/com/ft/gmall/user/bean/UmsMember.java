@@ -9,9 +9,9 @@ public class UmsMember implements Serializable {
     @Id
     private String id;
     private String         memberLevelId;
-    private String username;
+    private String userName;
     private String         password;
-    private String nickname;
+    private String nickName;
     private String         phone;
     private int status;
     private Date createTime;
@@ -43,12 +43,12 @@ public class UmsMember implements Serializable {
         this.memberLevelId = memberLevelId;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
@@ -59,12 +59,12 @@ public class UmsMember implements Serializable {
         this.password = password;
     }
 
-    public String getNickname() {
-        return nickname;
+    public String getNickName() {
+        return nickName;
     }
 
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
     }
 
     public String getPhone() {
