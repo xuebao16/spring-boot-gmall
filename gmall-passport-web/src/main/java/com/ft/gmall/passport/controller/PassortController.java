@@ -1,5 +1,7 @@
 package com.ft.gmall.passport.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.ft.gmall.annotaions.LoginRequire;
 import com.ft.gmall.user.bean.UmsMember;
 import com.ft.gmall.user.service.UserService;
 import com.ft.gmall.util.JwtUtil;
@@ -53,5 +55,21 @@ public class PassortController {
 
         userService.addUserToken(token, userId);
         return token;
+    }
+
+    @RequestMapping("/verify")
+    @ResponseBody
+    String verify(String token, String currentIp, HttpServletRequest request){
+        Map<String, String> map = new HashMap<>();
+        Map<String, Object> decode = JwtUtil.decode(token, "2020gmall0418", currentIp);
+        if(decode!=null){
+            map.put("status","success");
+            map.put("memberId",(String)decode.get("memberId"));
+            map.put("nickname",(String)decode.get("nickname"));
+        }else{
+            map.put("status","fail");
+        }
+
+        return JSON.toJSONString(map);
     }
 }
